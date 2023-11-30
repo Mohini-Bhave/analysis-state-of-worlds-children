@@ -134,6 +134,42 @@ In Summary, we can perform below steps for analysis:
 
 ## Missing value analysis
 
+```{r}
+# Install and load required packages
+if (!require("readxl")) install.packages("readxl")
+if (!require("visdat")) install.packages("visdat")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("dplyr")) install.packages("dplyr")
+if (!require("tidyr")) install.packages("tidyr")
+
+library(readxl)
+library(visdat)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+xls <- readxl::excel_sheets(file_path)
+
+# Loop through each sheet and create visualizations
+for (sheet in xls) {
+    data <- readxl::read_excel(file_path, sheet = sheet)
+    
+    # Heatmap of Missing Values for each sheet
+    vis_miss(data) + ggtitle(paste("Missing Data Heatmap -", sheet))
+    
+    # Bar Plot of Missing Values by Variable for each sheet
+    data %>%
+        summarise_all(~sum(is.na(.))/n()) %>%
+        gather(key = "variable", value = "missing_percent") %>%
+        ggplot(aes(x = variable, y = missing_percent)) +
+        geom_bar(stat = "identity", fill = "blue") +
+        theme_minimal() +
+        labs(title = paste("Proportion of Missing Data by Variable -", sheet), x = "Variable", y = "Percentage Missing")
+}
+
+```
 
 
 
