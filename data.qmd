@@ -158,10 +158,10 @@ sheets_with_missing_values
 ```
 
 ```{r}
-library(ggplot2)
-library(viridis)
-library(reshape2)
-library(readxl)
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("viridis")) install.packages("viridis")
+if (!require("reshape2")) install.packages("reshape2")
+if (!require("readxl")) install.packages("readxl")
 
 # Load the Excel file
 file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
