@@ -133,41 +133,67 @@ In Summary, we can perform below steps for analysis:
    - Apply regression analysis for prediction and impact analysis.
 
 ## Missing value analysis
-
 ```{r}
-# Install and load required packages
-if (!require("readxl")) install.packages("readxl")
-if (!require("visdat")) install.packages("visdat")
-if (!require("ggplot2")) install.packages("ggplot2")
-if (!require("dplyr")) install.packages("dplyr")
-if (!require("tidyr")) install.packages("tidyr")
-
 library(readxl)
-library(visdat)
-library(ggplot2)
-library(dplyr)
-library(tidyr)
 
 # Load the Excel file
 file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
-xls <- readxl::excel_sheets(file_path)
+xls <- excel_sheets(file_path)
 
-# Loop through each sheet and create visualizations
+# Initialize a list to store the presence of missing values in each sheet
+sheets_with_missing_values <- list()
+
+# Loop through each sheet in the Excel file
 for (sheet in xls) {
-    data <- readxl::read_excel(file_path, sheet = sheet)
-    
-    # Heatmap of Missing Values for each sheet
-    vis_miss(data) + ggtitle(paste("Missing Data Heatmap -", sheet))
-    
-    # Bar Plot of Missing Values by Variable for each sheet
-    data %>%
-        summarise_all(~sum(is.na(.))/n()) %>%
-        gather(key = "variable", value = "missing_percent") %>%
-        ggplot(aes(x = variable, y = missing_percent)) +
-        geom_bar(stat = "identity", fill = "blue") +
-        theme_minimal() +
-        labs(title = paste("Proportion of Missing Data by Variable -", sheet), x = "Variable", y = "Percentage Missing")
+    data <- read_excel(file_path, sheet = sheet)
+    # Check if there are any missing values
+    if (any(is.na(data))) {
+        sheets_with_missing_values[[sheet]] <- sum(is.na(data))
+    }
 }
+
+# Print the list of sheets with missing values
+sheets_with_missing_values
+
+```
+
+```{r}
+library(ggplot2)
+library(viridis)
+library(reshape2)
+library(readxl)
+
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+sheet_name <- "6. HIV AIDS Epidemiology"
+
+# Reading the sheet
+data <- readxl::read_excel(file_path, sheet = sheet_name)
+
+# Calculate the missing data
+missing_data <- is.na(data)
+missing_data_matrix <- as.matrix(missing_data)
+
+# Convert the data to long format for ggplot
+long_missing_data <- melt(missing_data_matrix, varnames = c("Row", "Variable"))
+
+# Create a Heatmap for Missing Data
+ggplot(long_missing_data, aes(x = Variable, y = Row)) +
+    geom_tile(aes(fill = value), colour = "white") +
+    scale_fill_viridis(name = "", discrete = TRUE, labels = c("Present", "Missing")) +
+    theme_minimal() +
+    labs(title = "Heatmap of Missing Data in HIV AIDS Epidemiology Sheet", x = "Variable", y = "Row Number") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+# Histogram of Missing Values
+missing_counts <- colSums(missing_data)
+missing_data_histogram <- data.frame(Variable = names(missing_counts), MissingCount = missing_counts)
+
+ggplot(missing_data_histogram, aes(x = MissingCount)) +
+    geom_histogram(binwidth = 1, fill = "cornflowerblue", color = "black") +
+    scale_x_continuous(breaks = seq(0, max(missing_counts), by = 1)) +
+    theme_minimal() +
+    labs(title = "Histogram of Missing Values in HIV AIDS Epidemiology Sheet", x = "Number of Missing Values", y = "Frequency")
 
 ```
 
