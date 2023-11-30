@@ -1,5 +1,139 @@
 # Data
 
-## Description
+## Technical Description
+
+### Data Sources
+
+#### UNICEF’s State of the World's Children Report 2023
+The UNICEF report is a comprehensive resource offering extensive data on child health and vaccination. This dataset is pivotal in understanding the global landscape of child immunization, especially in the context of the COVID-19 pandemic. It provides a detailed overview of vaccination rates, types of vaccines administered, and coverage across various demographic segments.
+
+#### WHO Immunization Data
+The World Health Organization (WHO) offers a global perspective on immunization, with data encompassing coverage and health indicators. This dataset is crucial for comparative analysis, allowing for a broader understanding of how different regions and countries fare in their vaccination efforts.
+
+### Data Collection and Format
+
+#### UNICEF
+UNICEF's data compilation is a rigorous process involving health surveys and reports from national health systems. The data is methodically structured, typically in formats like CSV, which facilitates ease of analysis and integration into various data processing tools.
+
+#### WHO
+WHO's data is sourced from national health departments, ensuring standardization and reliability. The data is made available in user-friendly formats such as CSV and through APIs, which offers flexibility for data analysts and researchers in how they access and utilize the information.
+
+### Frequency
+
+Both UNICEF and WHO datasets are updated annually, providing a timely snapshot of the global state of child vaccination. These datasets encompass various dimensions, including but not limited to:
+
+- Vaccine Type: Detailed data on different vaccines administered globally.
+- Coverage Rate: Insights into the percentage of the target population receiving vaccinations.
+- Geographical Data: Country-wise and region-wise vaccination statistics.
+- Age Group: Vaccination data segmented by different age groups, which is vital for understanding the demographics of vaccination coverage.
+
+
+### Dimensions
+1. **Demographics**: Rows (247) x Columns (35)
+2. **Child Mortality**: Rows (245) x Columns (43)
+3. **Maternal And Newborn Health**: Rows (262) x Columns (27)
+4. **Child Health**: Rows (264) x Columns (34)
+5. **Adolescent Health**: Rows (263) x Columns (35)
+6. **HIV AIDS Epidemiology**: Rows (240) x Columns (14)
+7. **HIV AIDS Intervention Covera**: Rows (247) x Columns (18)
+8. **Nutrition**: Rows (275) x Columns (26)
+9. **Nutrition - Breastfeeding**: Rows (256) x Columns (26)
+10. **Early Childhood Development**: Rows (250) x Columns (46)
+11. **Education**: Rows (250) x Columns (45)
+12. **Child Protection**: Rows (259) x Columns (44)
+13. **Social Protection And Equit**: Rows (250) x Columns (15)
+14. **WASH**: Rows (247) x Columns (45)
+15. **Adolescents**: Rows (254) x Columns (36)
+16. **Children with disabilities**: Rows (247) x Columns (43)
+17. **Women's Econ Empowerment**: Rows (255) x Columns (42)
+18. **Migration**: Rows (245) x Columns (19)
+
+### Issues
+
+One of the challenges in working with such extensive datasets is the potential for inconsistencies. These may arise due to variations in data collection methods across different countries or changes in reporting standards. Such discrepancies need to be acknowledged and addressed in the analysis to ensure accuracy.
+
+### Import Plan
+
+To handle these rich datasets, the project will leverage R, a powerful tool for data analysis. Utilizing packages like `tidyverse`, the data import process will be streamlined, allowing for efficient handling of Excel files. The choice of R also opens up a plethora of options for data cleaning, manipulation, and visualization, making it an ideal environment for this analysis.
+
+### Documentation of Sources
+
+The sources for this data are:
+
+- [UNICEF Immunization Data](https://data.unicef.org/resources/dataset/the-state-of-the-worlds-children-2023-statistical-tables/
+
+These sources provide the foundational data for this project, offering a comprehensive view of the state of child vaccination globally.
+
+
+## Research Plan
+
+Each dataset offers unique insights integral to addressing specific questions regarding the impact of the COVID-19 pandemic on global child vaccination rates.
+
+1. **Trends in Global Child Vaccination Rates Pre and Post-Pandemic**
+
+- **Yearly Data Analysis**: The datasets provide yearly data on vaccination rates, essential for comparing pre-pandemic (prior to 2020) and post-pandemic (2020 onwards) scenarios.
+- **Impact Assessment**: Analyzing the change in vaccination rates over these periods will reveal the direct impact of the pandemic on child vaccination programs.
+
+2. **Regional Disparities in Child Vaccination Coverage**
+
+- **Country-Specific Data**: Both datasets contain detailed, country-specific vaccination information, allowing for analysis of regional disparities.
+- **Comparative Analysis**: By comparing vaccination rates across different countries and regions, regions most affected by the pandemic can be identified, highlighting areas where recovery efforts might be most needed.
+
+3. **Vaccine-Specific Trends and Coverage**
+
+- **Vaccine Coverage Rates**: The datasets detail coverage rates for specific vaccines, vital for understanding which vaccines experienced significant disruptions or maintained steady coverage rates during the pandemic.
+- **Program Vulnerabilities and Strengths**: The analysis can reveal specific vulnerabilities or strengths in the vaccination programs for different diseases.
+
+4. **Impact of COVID-19 on Healthcare Prioritization and Resource Allocation**
+
+- **Trend Examination**: Examining trends in vaccination coverage alongside data on healthcare resource allocation, if available, can infer the impact of resources diverted to combat COVID-19 on routine vaccinations.
+- **Healthcare Trend Correlation**: This aspect requires correlating vaccination data with broader healthcare trends during the pandemic, potentially drawing on additional healthcare system data.
+
+5. **Correlation Between COVID-19 Incidence and Vaccination Rates**
+
+- **Data Supplementation**: Supplement datasets with COVID-19 incidence rates to explore correlations.
+- **Impact Understanding**: This analysis can highlight the direct and indirect effects of the pandemic on public health services.
+
+6. **Recovery and Resilience in Child Vaccination Programs**
+
+- **Recent Data Analysis**: By analyzing the most recent data available post-pandemic, it's possible to assess signs of recovery or resilience in child vaccination programs.
+- **Resilience Identification**: Identify regions or countries where vaccination rates have begun to rebound or have remained stable despite the pandemic.
+
+7. **Equity and Accessibility in Child Vaccination Amidst the Pandemic**
+
+- **Demographic Analysis**: The datasets include demographic data, allowing for an examination of vaccination rates among different socioeconomic groups.
+- **Inequality Insights**: This analysis can uncover inequalities in vaccine distribution and accessibility that may have been exacerbated by the pandemic.
+
+8. **Long-term Implications of Pandemic on Child Health**
+
+- **Trend Extrapolation**: Long-term trends can be extrapolated from the available data to predict potential future impacts on child health due to the pandemic.
+- **Pattern Analysis**: Analyze patterns in the data that may indicate lasting effects of the pandemic on child vaccination and overall health.
+
+
+In Summary, we can perform below steps for analysis: 
+
+1. **Handling Missing Values**:
+   - Identify and quantify missing values in the datasets.
+   - Apply appropriate techniques like imputation or exclusion, depending on the missing data pattern.
+
+2. **Handling Non-Numeric Data**:
+   - Convert non-numeric data, such as country names or vaccine types, into an analyzable format.
+   - Integrate non-numeric information effectively into the analysis.
+
+3. **Descriptive Statistical Analysis**:
+   - Conduct descriptive analysis to understand basic data features.
+   - Use visualizations to illustrate descriptive statistics.
+
+4. **Trend Analysis and Comparative Studies**:
+   - Perform trend analysis to observe changes in vaccination rates, especially pre- and post-COVID-19.
+   - Conduct comparative studies between different regions, countries, and vaccines.
+
+5. **Correlation and Regression Analysis**:
+   - Use correlation analysis to explore relationships between different variables.
+   - Apply regression analysis for prediction and impact analysis.
 
 ## Missing value analysis
+
+
+
+

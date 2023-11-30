@@ -141,8 +141,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description"><span class="header-section-number">2.1</span> Description</a></li>
-  <li><a href="#missing-value-analysis" id="toc-missing-value-analysis" class="nav-link" data-scroll-target="#missing-value-analysis"><span class="header-section-number">2.2</span> Missing value analysis</a></li>
+  <li><a href="#technical-description" id="toc-technical-description" class="nav-link active" data-scroll-target="#technical-description"><span class="header-section-number">2.1</span> Technical Description</a>
+  <ul class="collapse">
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">2.1.1</span> Data Sources</a></li>
+  <li><a href="#data-collection-and-format" id="toc-data-collection-and-format" class="nav-link" data-scroll-target="#data-collection-and-format"><span class="header-section-number">2.1.2</span> Data Collection and Format</a></li>
+  <li><a href="#frequency" id="toc-frequency" class="nav-link" data-scroll-target="#frequency"><span class="header-section-number">2.1.3</span> Frequency</a></li>
+  <li><a href="#dimensions" id="toc-dimensions" class="nav-link" data-scroll-target="#dimensions"><span class="header-section-number">2.1.4</span> Dimensions</a></li>
+  <li><a href="#issues" id="toc-issues" class="nav-link" data-scroll-target="#issues"><span class="header-section-number">2.1.5</span> Issues</a></li>
+  <li><a href="#import-plan" id="toc-import-plan" class="nav-link" data-scroll-target="#import-plan"><span class="header-section-number">2.1.6</span> Import Plan</a></li>
+  <li><a href="#documentation-of-sources" id="toc-documentation-of-sources" class="nav-link" data-scroll-target="#documentation-of-sources"><span class="header-section-number">2.1.7</span> Documentation of Sources</a></li>
+  </ul></li>
+  <li><a href="#research-plan" id="toc-research-plan" class="nav-link" data-scroll-target="#research-plan"><span class="header-section-number">2.2</span> Research Plan</a></li>
+  <li><a href="#missing-value-analysis" id="toc-missing-value-analysis" class="nav-link" data-scroll-target="#missing-value-analysis"><span class="header-section-number">2.3</span> Missing value analysis</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/Mohini-Bhave/analysis-state-of-worlds-children/edit/main/data.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/Mohini-Bhave/analysis-state-of-worlds-children/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
@@ -166,11 +176,170 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="description" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="description"><span class="header-section-number">2.1</span> Description</h2>
+<section id="technical-description" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="technical-description"><span class="header-section-number">2.1</span> Technical Description</h2>
+<section id="data-sources" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">2.1.1</span> Data Sources</h3>
+<section id="unicefs-state-of-the-worlds-children-report-2023" class="level4" data-number="2.1.1.1">
+<h4 data-number="2.1.1.1" class="anchored" data-anchor-id="unicefs-state-of-the-worlds-children-report-2023"><span class="header-section-number">2.1.1.1</span> UNICEF’s State of the World’s Children Report 2023</h4>
+<p>The UNICEF report is a comprehensive resource offering extensive data on child health and vaccination. This dataset is pivotal in understanding the global landscape of child immunization, especially in the context of the COVID-19 pandemic. It provides a detailed overview of vaccination rates, types of vaccines administered, and coverage across various demographic segments.</p>
 </section>
-<section id="missing-value-analysis" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="missing-value-analysis"><span class="header-section-number">2.2</span> Missing value analysis</h2>
+<section id="who-immunization-data" class="level4" data-number="2.1.1.2">
+<h4 data-number="2.1.1.2" class="anchored" data-anchor-id="who-immunization-data"><span class="header-section-number">2.1.1.2</span> WHO Immunization Data</h4>
+<p>The World Health Organization (WHO) offers a global perspective on immunization, with data encompassing coverage and health indicators. This dataset is crucial for comparative analysis, allowing for a broader understanding of how different regions and countries fare in their vaccination efforts.</p>
+</section>
+</section>
+<section id="data-collection-and-format" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="data-collection-and-format"><span class="header-section-number">2.1.2</span> Data Collection and Format</h3>
+<section id="unicef" class="level4" data-number="2.1.2.1">
+<h4 data-number="2.1.2.1" class="anchored" data-anchor-id="unicef"><span class="header-section-number">2.1.2.1</span> UNICEF</h4>
+<p>UNICEF’s data compilation is a rigorous process involving health surveys and reports from national health systems. The data is methodically structured, typically in formats like CSV, which facilitates ease of analysis and integration into various data processing tools.</p>
+</section>
+<section id="who" class="level4" data-number="2.1.2.2">
+<h4 data-number="2.1.2.2" class="anchored" data-anchor-id="who"><span class="header-section-number">2.1.2.2</span> WHO</h4>
+<p>WHO’s data is sourced from national health departments, ensuring standardization and reliability. The data is made available in user-friendly formats such as CSV and through APIs, which offers flexibility for data analysts and researchers in how they access and utilize the information.</p>
+</section>
+</section>
+<section id="frequency" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="frequency"><span class="header-section-number">2.1.3</span> Frequency</h3>
+<p>Both UNICEF and WHO datasets are updated annually, providing a timely snapshot of the global state of child vaccination. These datasets encompass various dimensions, including but not limited to:</p>
+<ul>
+<li>Vaccine Type: Detailed data on different vaccines administered globally.</li>
+<li>Coverage Rate: Insights into the percentage of the target population receiving vaccinations.</li>
+<li>Geographical Data: Country-wise and region-wise vaccination statistics.</li>
+<li>Age Group: Vaccination data segmented by different age groups, which is vital for understanding the demographics of vaccination coverage.</li>
+</ul>
+</section>
+<section id="dimensions" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="dimensions"><span class="header-section-number">2.1.4</span> Dimensions</h3>
+<ol type="1">
+<li><strong>Demographics</strong>: Rows (247) x Columns (35)</li>
+<li><strong>Child Mortality</strong>: Rows (245) x Columns (43)</li>
+<li><strong>Maternal And Newborn Health</strong>: Rows (262) x Columns (27)</li>
+<li><strong>Child Health</strong>: Rows (264) x Columns (34)</li>
+<li><strong>Adolescent Health</strong>: Rows (263) x Columns (35)</li>
+<li><strong>HIV AIDS Epidemiology</strong>: Rows (240) x Columns (14)</li>
+<li><strong>HIV AIDS Intervention Covera</strong>: Rows (247) x Columns (18)</li>
+<li><strong>Nutrition</strong>: Rows (275) x Columns (26)</li>
+<li><strong>Nutrition - Breastfeeding</strong>: Rows (256) x Columns (26)</li>
+<li><strong>Early Childhood Development</strong>: Rows (250) x Columns (46)</li>
+<li><strong>Education</strong>: Rows (250) x Columns (45)</li>
+<li><strong>Child Protection</strong>: Rows (259) x Columns (44)</li>
+<li><strong>Social Protection And Equit</strong>: Rows (250) x Columns (15)</li>
+<li><strong>WASH</strong>: Rows (247) x Columns (45)</li>
+<li><strong>Adolescents</strong>: Rows (254) x Columns (36)</li>
+<li><strong>Children with disabilities</strong>: Rows (247) x Columns (43)</li>
+<li><strong>Women’s Econ Empowerment</strong>: Rows (255) x Columns (42)</li>
+<li><strong>Migration</strong>: Rows (245) x Columns (19)</li>
+</ol>
+</section>
+<section id="issues" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="issues"><span class="header-section-number">2.1.5</span> Issues</h3>
+<p>One of the challenges in working with such extensive datasets is the potential for inconsistencies. These may arise due to variations in data collection methods across different countries or changes in reporting standards. Such discrepancies need to be acknowledged and addressed in the analysis to ensure accuracy.</p>
+</section>
+<section id="import-plan" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="import-plan"><span class="header-section-number">2.1.6</span> Import Plan</h3>
+<p>To handle these rich datasets, the project will leverage R, a powerful tool for data analysis. Utilizing packages like <code>tidyverse</code>, the data import process will be streamlined, allowing for efficient handling of Excel files. The choice of R also opens up a plethora of options for data cleaning, manipulation, and visualization, making it an ideal environment for this analysis.</p>
+</section>
+<section id="documentation-of-sources" class="level3" data-number="2.1.7">
+<h3 data-number="2.1.7" class="anchored" data-anchor-id="documentation-of-sources"><span class="header-section-number">2.1.7</span> Documentation of Sources</h3>
+<p>The sources for this data are:</p>
+<ul>
+<li>[UNICEF Immunization Data](https://data.unicef.org/resources/dataset/the-state-of-the-worlds-children-2023-statistical-tables/</li>
+</ul>
+<p>These sources provide the foundational data for this project, offering a comprehensive view of the state of child vaccination globally.</p>
+</section>
+</section>
+<section id="research-plan" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="research-plan"><span class="header-section-number">2.2</span> Research Plan</h2>
+<p>Each dataset offers unique insights integral to addressing specific questions regarding the impact of the COVID-19 pandemic on global child vaccination rates.</p>
+<ol type="1">
+<li>Trends in Global Child Vaccination Rates Pre and Post-Pandemic</li>
+</ol>
+<ul>
+<li><strong>Yearly Data Analysis</strong>: The datasets provide yearly data on vaccination rates, essential for comparing pre-pandemic (prior to 2020) and post-pandemic (2020 onwards) scenarios.</li>
+<li><strong>Impact Assessment</strong>: Analyzing the change in vaccination rates over these periods will reveal the direct impact of the pandemic on child vaccination programs.</li>
+</ul>
+<ol start="2" type="1">
+<li>Regional Disparities in Child Vaccination Coverage</li>
+</ol>
+<ul>
+<li><strong>Country-Specific Data</strong>: Both datasets contain detailed, country-specific vaccination information, allowing for analysis of regional disparities.</li>
+<li><strong>Comparative Analysis</strong>: By comparing vaccination rates across different countries and regions, regions most affected by the pandemic can be identified, highlighting areas where recovery efforts might be most needed.</li>
+</ul>
+<ol start="3" type="1">
+<li>Vaccine-Specific Trends and Coverage</li>
+</ol>
+<ul>
+<li><strong>Vaccine Coverage Rates</strong>: The datasets detail coverage rates for specific vaccines, vital for understanding which vaccines experienced significant disruptions or maintained steady coverage rates during the pandemic.</li>
+<li><strong>Program Vulnerabilities and Strengths</strong>: The analysis can reveal specific vulnerabilities or strengths in the vaccination programs for different diseases.</li>
+</ul>
+<ol start="4" type="1">
+<li>Impact of COVID-19 on Healthcare Prioritization and Resource Allocation</li>
+</ol>
+<ul>
+<li><strong>Trend Examination</strong>: Examining trends in vaccination coverage alongside data on healthcare resource allocation, if available, can infer the impact of resources diverted to combat COVID-19 on routine vaccinations.</li>
+<li><strong>Healthcare Trend Correlation</strong>: This aspect requires correlating vaccination data with broader healthcare trends during the pandemic, potentially drawing on additional healthcare system data.</li>
+</ul>
+<ol start="5" type="1">
+<li>Correlation Between COVID-19 Incidence and Vaccination Rates</li>
+</ol>
+<ul>
+<li><strong>Data Supplementation</strong>: Supplement datasets with COVID-19 incidence rates to explore correlations.</li>
+<li><strong>Impact Understanding</strong>: This analysis can highlight the direct and indirect effects of the pandemic on public health services.</li>
+</ul>
+<ol start="6" type="1">
+<li>Recovery and Resilience in Child Vaccination Programs</li>
+</ol>
+<ul>
+<li><strong>Recent Data Analysis</strong>: By analyzing the most recent data available post-pandemic, it’s possible to assess signs of recovery or resilience in child vaccination programs.</li>
+<li><strong>Resilience Identification</strong>: Identify regions or countries where vaccination rates have begun to rebound or have remained stable despite the pandemic.</li>
+</ul>
+<ol start="7" type="1">
+<li>Equity and Accessibility in Child Vaccination Amidst the Pandemic</li>
+</ol>
+<ul>
+<li><strong>Demographic Analysis</strong>: The datasets include demographic data, allowing for an examination of vaccination rates among different socioeconomic groups.</li>
+<li><strong>Inequality Insights</strong>: This analysis can uncover inequalities in vaccine distribution and accessibility that may have been exacerbated by the pandemic.</li>
+</ul>
+<ol start="8" type="1">
+<li>Long-term Implications of Pandemic on Child Health</li>
+</ol>
+<ul>
+<li><strong>Trend Extrapolation</strong>: Long-term trends can be extrapolated from the available data to predict potential future impacts on child health due to the pandemic.</li>
+<li><strong>Pattern Analysis</strong>: Analyze patterns in the data that may indicate lasting effects of the pandemic on child vaccination and overall health.</li>
+</ul>
+<p>In Summary, we can perform below steps for analysis:</p>
+<ol type="1">
+<li><strong>Handling Missing Values</strong>:
+<ul>
+<li>Identify and quantify missing values in the datasets.</li>
+<li>Apply appropriate techniques like imputation or exclusion, depending on the missing data pattern.</li>
+</ul></li>
+<li><strong>Handling Non-Numeric Data</strong>:
+<ul>
+<li>Convert non-numeric data, such as country names or vaccine types, into an analyzable format.</li>
+<li>Integrate non-numeric information effectively into the analysis.</li>
+</ul></li>
+<li><strong>Descriptive Statistical Analysis</strong>:
+<ul>
+<li>Conduct descriptive analysis to understand basic data features.</li>
+<li>Use visualizations to illustrate descriptive statistics.</li>
+</ul></li>
+<li><strong>Trend Analysis and Comparative Studies</strong>:
+<ul>
+<li>Perform trend analysis to observe changes in vaccination rates, especially pre- and post-COVID-19.</li>
+<li>Conduct comparative studies between different regions, countries, and vaccines.</li>
+</ul></li>
+<li><strong>Correlation and Regression Analysis</strong>:
+<ul>
+<li>Use correlation analysis to explore relationships between different variables.</li>
+<li>Apply regression analysis for prediction and impact analysis.</li>
+</ul></li>
+</ol>
+</section>
+<section id="missing-value-analysis" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="missing-value-analysis"><span class="header-section-number">2.3</span> Missing value analysis</h2>
 
 
 </section>

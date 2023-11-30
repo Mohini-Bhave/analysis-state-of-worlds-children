@@ -1,1 +1,48 @@
 # Introduction
+
+## Why This Topic?
+
+In the realm of public health, child vaccination stands as a cornerstone, crucial for ensuring the well-being of future generations. The onset of the COVID-19 pandemic has significantly disrupted this vital area, raising questions about the resilience of global vaccination programs. This project is driven by a personal and academic interest in understanding how these disruptions have impacted child vaccination rates worldwide, particularly in the face of such an unprecedented global health crisis.
+
+The aim is to delve into various facets of child vaccination, examining trends, setbacks, and recoveries. This topic is not just of academic interest but is pivotal in shaping public health policies and strategies. The questions at the core of this study include: How did the COVID-19 pandemic affect child vaccination rates globally? What disparities can be observed in vaccination coverage among different regions? How did the pandemic influence public health priorities and resource allocation?
+
+## Research Questions to guide analysis
+
+1. **Trends in Global Child Vaccination Rates Pre and Post-Pandemic**:
+   - How have global child vaccination rates changed before and after the onset of the COVID-19 pandemic?
+   - Are there specific trends or patterns in vaccination rates that can be attributed to the pandemic’s impact?
+
+2. **Regional Disparities in Child Vaccination Coverage**:
+   - What disparities exist in child vaccination coverage across different regions or countries?
+   - How have these disparities been affected by the COVID-19 pandemic?
+
+3. **Vaccine-Specific Trends and Coverage**:
+   - For specific vaccines (e.g., measles, polio, DTP), how has the coverage changed during the pandemic?
+   - Are there particular vaccines that have seen more significant disruptions in coverage rates?
+
+4. **Impact of COVID-19 on Healthcare Prioritization and Resource Allocation**:
+   - How has the allocation of healthcare resources towards combating COVID-19 impacted routine child vaccination programs?
+   - Are there indications of shifts in public health priorities due to the pandemic, as reflected in the vaccination data?
+
+5. **Correlation Between COVID-19 Incidence and Vaccination Rates**:
+   - Is there a correlation between the incidence rates of COVID-19 in different regions and changes in child vaccination rates?
+   - How have countries with higher burdens of COVID-19 managed their routine child vaccination programs?
+
+6. **Recovery and Resilience in Child Vaccination Programs**:
+   - Post the initial wave(s) of the pandemic, what signs of recovery can be observed in child vaccination programs?
+   - Which regions or countries have shown notable resilience or recovery in their vaccination rates?
+
+7. **Equity and Accessibility in Child Vaccination Amidst the Pandemic**:
+   - Has the pandemic exacerbated existing inequalities in access to child vaccination?
+   - What patterns emerge in the data regarding vaccination accessibility among different socioeconomic groups?
+
+8. **Long-term Implications of Pandemic on Child Health**:
+   - Based on the trends observed, what long-term implications might the pandemic have on child health due to disrupted vaccination schedules?
+
+## Context for the Unfamiliar
+
+Child vaccination is a critical defense against infectious diseases, forming a crucial part of children's health routines. These essential vaccines, which protect against diseases like measles and polio, faced unprecedented disruptions due to the COVID-19 pandemic, threatening to undo years of healthcare progress.
+
+Understanding the pandemic's impact on child vaccination is vital. It's not just about data; it’s about grasping how a global health crisis affects our youngest and most vulnerable. This analysis aims to highlight the consequences of the pandemic, revealing gaps in healthcare that need urgent attention.
+
+The significance of this study goes beyond academic interest. It's about providing insights for decision-makers and health professionals, guiding efforts to strengthen and recover child vaccination programs. This work is essential in ensuring the pandemic doesn't compromise our commitment to safeguarding children's health and future.
