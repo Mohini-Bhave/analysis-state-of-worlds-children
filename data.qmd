@@ -133,31 +133,10 @@ In Summary, we can perform below steps for analysis:
    - Apply regression analysis for prediction and impact analysis.
 
 ## Missing value analysis
-```{r}
-library(readxl)
 
-# Load the Excel file
-file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
-xls <- excel_sheets(file_path)
 
-# Initialize a list to store the presence of missing values in each sheet
-sheets_with_missing_values <- list()
-
-# Loop through each sheet in the Excel file
-for (sheet in xls) {
-    data <- read_excel(file_path, sheet = sheet)
-    # Check if there are any missing values
-    if (any(is.na(data))) {
-        sheets_with_missing_values[[sheet]] <- sum(is.na(data))
-    }
-}
-
-# Print the list of sheets with missing values
-sheets_with_missing_values
-
-```
-
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE, fig.width = 30, fig.height = 10}
+# Load required packages
 if (!require("ggplot2")) install.packages("ggplot2")
 if (!require("viridis")) install.packages("viridis")
 if (!require("reshape2")) install.packages("reshape2")
@@ -183,7 +162,19 @@ ggplot(long_missing_data, aes(x = Variable, y = Row)) +
     scale_fill_viridis(name = "", discrete = TRUE, labels = c("Present", "Missing")) +
     theme_minimal() +
     labs(title = "Heatmap of Missing Data in HIV AIDS Epidemiology Sheet", x = "Variable", y = "Row Number") +
-    theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    theme(axis.text.x = element_text(angle = 0, vjust = 0.5, size = 30),
+          axis.text.y = element_text(size = 30),
+          plot.title = element_text(size = 40),
+          axis.title.x = element_text(size = 30),
+          axis.title.y = element_text(size = 30),
+          legend.text = element_text(size = 30))
+
+# Description: The heatmap shows the distribution of missing data across variables and rows. ...
+
+```
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE, fig.width = 25, fig.height = 20}
 
 # Histogram of Missing Values
 missing_counts <- colSums(missing_data)
@@ -193,27 +184,57 @@ ggplot(missing_data_histogram, aes(x = MissingCount)) +
     geom_histogram(binwidth = 1, fill = "cornflowerblue", color = "black") +
     scale_x_continuous(breaks = seq(0, max(missing_counts), by = 1)) +
     theme_minimal() +
-    labs(title = "Histogram of Missing Values in HIV AIDS Epidemiology Sheet", x = "Number of Missing Values", y = "Frequency")
+    labs(title = "Histogram of Missing Values in HIV AIDS Epidemiology Sheet", x = "Number of Missing Values", y = "Frequency") +
+    theme(axis.text.x = element_text(size = 30),
+          axis.text.y = element_text(size = 30),
+          plot.title = element_text(size = 40),
+          axis.title.x = element_text(size = 30),
+          axis.title.y = element_text(size = 30))
 
-missing_per_row <- rowSums(missing_data)
-missing_pattern_plot_data <- data.frame(Row = 1:nrow(data), MissingCount = missing_per_row)
+# Description: This histogram illustrates the frequency of missing values across variables. ...
+```
 
-ggplot(missing_pattern_plot_data, aes(x = Row, y = MissingCount)) +
-    geom_point(aes(color = MissingCount), alpha = 0.6) +
-    scale_color_viridis(name = "Count of Missing Values") +
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE, fig.width = 30, fig.height = 20}
+# Load required packages
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("dplyr")) install.packages("dplyr")
+
+# Define a function to plot missing data bar graph (percentage)
+plot_missing_data_bar <- function(data, sheet_name) {
+  # Filter out columns with 'TABLE' in their names
+  filtered_data <- data %>% select(-contains("TABLE"))
+  
+  total_rows <- nrow(filtered_data)
+  missing_percentages <- colSums(is.na(filtered_data)) / total_rows * 100
+  missing_data_df <- data.frame(Variable = names(missing_percentages), MissingPercentage = missing_percentages)
+
+  ggplot(missing_data_df, aes(x = Variable, y = MissingPercentage)) +
+    geom_bar(stat = "identity", fill = "powderblue") +
     theme_minimal() +
-    labs(title = "Pattern of Missing Values per Row in HIV AIDS Epidemiology Sheet", x = "Row Number", y = "Count of Missing Values")
+    labs(title = paste("Bar Graph of Missing Data Percentage in", sheet_name), x = "Variable", y = "Percentage of Missing Values") +
+    theme(axis.text.x = element_text(angle = 0, vjust = 0.5, size = 30),
+          axis.text.y = element_text(size = 30),
+          plot.title = element_text(size = 40),
+          axis.title.x = element_text(size = 30),
+          axis.title.y = element_text(size = 30))
+}
 
-time_series_data <- data.frame(RowIndex = 1:nrow(data), MissingCount = missing_per_row)
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
 
-ggplot(time_series_data, aes(x = RowIndex, y = MissingCount)) +
-    geom_line() +
-    theme_minimal() +
-    labs(title = "Time-Series of Missing Values in HIV AIDS Epidemiology Sheet",
-         x = "Row Index (Time)", y = "Count of Missing Values") +
-    scale_x_continuous(breaks = seq(1, nrow(data), by = 10))
+# Reading the sheets
+child_mortality_data <- readxl::read_excel(file_path, sheet = "2. Child Mortality")
+adolescent_health_data <- readxl::read_excel(file_path, sheet = "5. Adolescent Health")
+children_disability_data <- readxl::read_excel(file_path, sheet = "16. Children with disabilities")
+
+# Plotting the bar graphs for each sheet
+plot_missing_data_bar(child_mortality_data, "Child Mortality")
+plot_missing_data_bar(adolescent_health_data, "Adolescent Health")
+plot_missing_data_bar(children_disability_data, "Children with Disabilities")
 
 ```
+
 
 
 
