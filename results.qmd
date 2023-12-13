@@ -1,15 +1,23 @@
 # Results
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+if (!require("writexl")) install.packages("writexl")
 library(readxl)
 library(dplyr)
 library(scales)
+library(writexl)
 
 # Load the Excel file
 file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
 
 # Get the names of all sheets
 sheet_names <- excel_sheets(file_path)
+
+# Function to calculate mode
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
 
 # Function to preprocess a single sheet
 preprocess_sheet <- function(sheet_name) {
@@ -25,23 +33,24 @@ preprocess_sheet <- function(sheet_name) {
   return(df)
 }
 
-# Function to calculate mode
-Mode <- function(x) {
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
+# Apply preprocessing to all sheets and store in a named list
+preprocessed_data <- setNames(object = lapply(sheet_names, preprocess_sheet),
+                              nm = sheet_names)
 
-# Apply preprocessing to all sheets and store in a list
-preprocessed_data <- lapply(sheet_names, preprocess_sheet)
+# Define the path for the new Excel file
+# new_file_path <- "./data/Preprocessed_SOWC-2023-Statistical-tables-All-EN.xlsx"
 
-# The preprocessed data is now stored in 'preprocessed_data'
-print(preprocessed_data)
+# Write each preprocessed data frame to a new Excel file
+# write_xlsx(preprocessed_data, path = new_file_path, col_names = TRUE)
+
+# Confirmation message
+# cat("Preprocessed data saved to", new_file_path)
 ```
 
 
 
 1. Bar Chart (10 Most Populous Countries)
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 # Load the Excel file
 file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
 sheet_name <- "6. HIV AIDS Epidemiology"
