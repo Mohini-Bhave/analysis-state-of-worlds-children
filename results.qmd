@@ -1,1 +1,53 @@
 # Results
+
+```{r}
+library(readxl)
+library(dplyr)
+library(scales)
+
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+
+# Get the names of all sheets
+sheet_names <- excel_sheets(file_path)
+
+# Function to preprocess a single sheet
+preprocess_sheet <- function(sheet_name) {
+  df <- read_excel(file_path, sheet = sheet_name)
+
+  # Handling missing values: Fill numeric missing values with median and categorical with mode
+  df <- df %>% mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm = TRUE), .)))
+  df <- df %>% mutate(across(where(is.factor), ~ifelse(is.na(.), Mode(.), .)))
+
+  # Normalization: Apply Min-Max scaling to numeric columns
+  df <- df %>% mutate(across(where(is.numeric), ~rescale(., to = c(0, 1))))
+
+  return(df)
+}
+
+# Function to calculate mode
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Apply preprocessing to all sheets and store in a list
+preprocessed_data <- lapply(sheet_names, preprocess_sheet)
+
+# The preprocessed data is now stored in 'preprocessed_data'
+print(preprocessed_data)
+```
+
+
+
+1. Bar Chart (10 Most Populous Countries)
+```{r}
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+sheet_name <- "6. HIV AIDS Epidemiology"
+
+# Reading the sheet
+data <- readxl::read_excel(file_path, sheet = sheet_name)
+
+```
+
