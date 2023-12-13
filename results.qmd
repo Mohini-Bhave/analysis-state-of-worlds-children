@@ -1,1 +1,89 @@
 # Results
+
+```{r}
+library(readxl)
+library(dplyr)
+library(scales)
+
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+
+# Get the names of all sheets
+sheet_names <- excel_sheets(file_path)
+
+# Function to preprocess a single sheet
+preprocess_sheet <- function(sheet_name) {
+  df <- read_excel(file_path, sheet = sheet_name)
+
+  # Handling missing values: Fill numeric missing values with median and categorical with mode
+  df <- df %>% mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm = TRUE), .)))
+  df <- df %>% mutate(across(where(is.factor), ~ifelse(is.na(.), Mode(.), .)))
+
+  # Normalization: Apply Min-Max scaling to numeric columns
+  df <- df %>% mutate(across(where(is.numeric), ~rescale(., to = c(0, 1))))
+
+  return(df)
+}
+
+# Function to calculate mode
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# Apply preprocessing to all sheets and store in a list
+preprocessed_data <- lapply(sheet_names, preprocess_sheet)
+
+# The preprocessed data is now stored in 'preprocessed_data'
+print(preprocessed_data)
+```
+
+
+```{r}
+# You need to install the following packages if not already installed
+# install.packages("ggplot2")
+
+library(ggplot2)
+
+# Data for the countries, percentages, and the estimated number of zero-dose children
+countries <- c(
+  "Democratic People's Republic of Korea", "Myanmar", "Somalia", "The Philippines",
+  "Angola", "Madagascar", "Mozambique", "Nigeria", "Ethiopia", "Chad", "Indonesia",
+  "Brazil", "Afghanistan", "Cameroon", "Democratic Republic of the Congo",
+  "United Republic of Tanzania", "Mexico", "Viet Nam", "India", "Pakistan"
+)
+percentages <- c(
+  50, 45, 40, 35, 30, 25, 20, 17.5, 15, 12.5, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+)
+# The sizes here are placeholders, and should be replaced with the actual numbers
+# of zero-dose children for each country, if available
+sizes <- seq(from = 10, to = 100, length.out = length(countries))
+
+# Create a dataframe
+data <- data.frame(country=factor(countries, levels=countries), percentage=percentages, size=sizes)
+
+# Create the bubble chart
+p <- ggplot(data, aes(x=country, y=percentage, size=size)) +
+  geom_point(alpha=0.5) +
+  scale_size_continuous(range = c(2, 20)) +  # Adjust this range according to your actual data
+  labs(title='Top 20 countries with the largest numbers of zero-dose children',
+       subtitle='Zero-dose children by number and percentage of the country’s child population, 2021',
+       x='Countries', y='Percentage of zero-dose children') +
+  theme_minimal() +
+  theme(axis.text.x=element_text(angle=45, hjust=1))
+
+# Print the plot
+print(p)
+```
+
+1. Bar Chart (10 Most Populous Countries)
+```{r}
+# Load the Excel file
+file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
+sheet_name <- "6. HIV AIDS Epidemiology"
+
+# Reading the sheet
+data <- readxl::read_excel(file_path, sheet = sheet_name)
+
+```
+
