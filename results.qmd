@@ -70,7 +70,7 @@ The bar chart above illustrates the top 10% of countries with the highest percen
 
 
 ## Bar Chart (Incidence Rates in Children (0-14))
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 data$inciChildren0to14 <- as.numeric(data$inciChildren0to14)
 filtered_data <- data %>% 
   filter(inciChildren0to14 > 1)
@@ -81,7 +81,8 @@ ggplot(filtered_data, aes(x = Countries, y = inciChildren0to14)) +
 ```
 
 ## Histogram (Distribution of Mortality Rates in Adoloscents(10-19))
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+
 data$mortAdolescents10to19 <- as.numeric(data$mortAdolescents10to19)
 
 sorted_data <- data %>% 
@@ -91,7 +92,9 @@ ggplot(data, aes(x = mortAdolescents10to19)) +
   geom_histogram(binwidth = 2, fill = "cornflowerblue", color = "black") + 
   labs(title = "Distribution of HIV Mortality Rates in Adolescents(10-19)")
 ```
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+
+# Load demographics data
 data_demo <- read_csv("./data/Demographics.csv")
 data_demo[data_demo == '-'] <- NA
 #Replace the NA values with 0's
@@ -101,7 +104,7 @@ for(column_name in names(data_demo)) {
 ```
 
 ## Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 library(ggplot2)
 library(plotly)
 
@@ -121,7 +124,7 @@ ggplotly(p, tooltip = "text")
 
 ## Line Chart for Life Expectancy in 2021 for the top 10 Countries
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 library(ggplot2)
 library(dplyr)
 data_demo$LifeExp2021 <- as.numeric(data_demo$LifeExp2021)
@@ -144,7 +147,7 @@ ggplot(top_countries, aes(x = reorder(Countries, LifeExp2021), y = LifeExp2021, 
 ## Heatmap for showing correlation
 
 
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 library(corrplot)
 
 numerical_cols <- c('AnnPopGrow2000to2020', 'AnnPopGrow2020to2030', 'LifeExp2021', 
@@ -157,7 +160,7 @@ corrplot(corr_matrix, method='color', tl.col="black", type = "upper", tl.srt = 4
 ```
 
 ## Pie Chart for Population Breakdown
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 library(ggplot2)
 data_demo$PopUtot <- as.numeric(data_demo$PopUtot)
 data_demo$PopU18 <- as.numeric(data_demo$PopU18)
@@ -180,7 +183,7 @@ ggplot(pie_data, aes(x = "", y = Values, fill = Category)) +
 ```
 
 ## Stacked Bar chart for top 3 countries
-```{r}
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 library(ggplot2)
 library(dplyr)
 library(tidyr)

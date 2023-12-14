@@ -49,52 +49,66 @@
     "text": "2.3 Missing value analysis"
   },
   {
+    "objectID": "results.html#analysis-of-overweight-percentages-in-2020",
+    "href": "results.html#analysis-of-overweight-percentages-in-2020",
+    "title": "3  Results",
+    "section": "3.1 Analysis of Overweight Percentages in 2020",
+    "text": "3.1 Analysis of Overweight Percentages in 2020\n\n\n\n\n\nThe bar chart above illustrates the top 10% of countries with the highest percentages of overweight individuals in the year 2020. This visualization helps in identifying the countries that are facing the most significant challenges related to overweight populations. Notably, Libya tops the chart, followed by Lebanon and Australia, indicating a need for targeted public health interventions in these areas. The variation in color for each country enhances the chart’s readability and allows for quick comparison across the countries listed. Such data is crucial for policymakers and health professionals who are working to combat obesity and promote healthier lifestyles."
+  },
+  {
     "objectID": "results.html#bar-chart-incidence-rates-in-children-0-14",
     "href": "results.html#bar-chart-incidence-rates-in-children-0-14",
     "title": "3  Results",
-    "section": "3.1 Bar Chart (Incidence Rates in Children (0-14))",
-    "text": "3.1 Bar Chart (Incidence Rates in Children (0-14))\n\n\nCode\ndata$inciChildren0to14 &lt;- as.numeric(data$inciChildren0to14)\nfiltered_data &lt;- data %&gt;% \n  filter(inciChildren0to14 &gt; 1)\nggplot(filtered_data, aes(x = Countries, y = inciChildren0to14)) +\n  geom_bar(stat = \"identity\", fill = 'cornflowerblue', color = 'black') +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +\n  labs(title = \"HIV Incidence Rates in Children (0-14)\", x = \"Country\", y = \"Incidence Rate\")"
+    "section": "3.2 Bar Chart (Incidence Rates in Children (0-14))",
+    "text": "3.2 Bar Chart (Incidence Rates in Children (0-14))"
   },
   {
     "objectID": "results.html#histogram-distribution-of-mortality-rates-in-adoloscents10-19",
     "href": "results.html#histogram-distribution-of-mortality-rates-in-adoloscents10-19",
     "title": "3  Results",
-    "section": "3.2 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))",
-    "text": "3.2 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))\n\n\nCode\ndata$mortAdolescents10to19 &lt;- as.numeric(data$mortAdolescents10to19)\n\nsorted_data &lt;- data %&gt;% \n  arrange(desc(mortAdolescents10to19))\n\nggplot(data, aes(x = mortAdolescents10to19)) + \n  geom_histogram(binwidth = 2, fill = \"cornflowerblue\", color = \"black\") + \n  labs(title = \"Distribution of HIV Mortality Rates in Adolescents(10-19)\")\n\n\n\n\n\n\n\nCode\ndata_demo &lt;- read_csv(\"./data/Demographics.csv\")\n\n\nWarning: One or more parsing issues, call `problems()` on your data frame for details,\ne.g.:\n  dat &lt;- vroom(...)\n  problems(dat)\n\n\nRows: 202 Columns: 18\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (10): Countries, PopU18, PopU5, TotDepRatio, ChildDepRatio, OldAgeDepRat...\ndbl  (8): PopUtot, AnnPopGrow2000to2020, AnnPopGrow2020to2030, AnnBirths, To...\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\nCode\ndata_demo[data_demo == '-'] &lt;- NA\n#Replace the NA values with 0's\nfor(column_name in names(data_demo)) {\n  data[[column_name]][is.na(data_demo[[column_name]])] &lt;- 0\n}"
+    "section": "3.3 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))",
+    "text": "3.3 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))"
   },
   {
     "objectID": "results.html#scatter-plot-for-life-expectancy-and-annual-population-growth-2020-2030",
     "href": "results.html#scatter-plot-for-life-expectancy-and-annual-population-growth-2020-2030",
     "title": "3  Results",
-    "section": "3.3 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)",
-    "text": "3.3 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)\n\n\nCode\nlibrary(ggplot2)\nlibrary(plotly)\n\n\n\nAttaching package: 'plotly'\n\n\nThe following object is masked from 'package:ggplot2':\n\n    last_plot\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n\nThe following object is masked from 'package:graphics':\n\n    layout\n\n\nCode\ndata_demo$LifeExp2021 &lt;- as.numeric(data_demo$LifeExp2021)\ndata_demo$AnnPopGrow2020to2030 &lt;- as.numeric(data_demo$AnnPopGrow2020to2030)\n\np &lt;- ggplot(data_demo, aes(x = LifeExp2021, y = AnnPopGrow2020to2030)) + \n  geom_point(aes(color = Countries))+\n  labs(title = \"Life Expectancy vs Annual Population Growth (2020-2030)\",\n       x = \"Life Expectancy\",\n       y = \"Annual Population Growth(2020-2030)\") +\n  theme_minimal()\n\nggplotly(p, tooltip = \"text\")"
+    "section": "3.4 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)",
+    "text": "3.4 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)"
   },
   {
     "objectID": "results.html#line-chart-for-life-expectancy-in-2021-for-the-top-10-countries",
     "href": "results.html#line-chart-for-life-expectancy-in-2021-for-the-top-10-countries",
     "title": "3  Results",
-    "section": "3.4 Line Chart for Life Expectancy in 2021 for the top 10 Countries",
-    "text": "3.4 Line Chart for Life Expectancy in 2021 for the top 10 Countries\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\ndata_demo$LifeExp2021 &lt;- as.numeric(data_demo$LifeExp2021)\n\ntop_countries &lt;- data_demo %&gt;%\n  top_n(10, LifeExp2021) %&gt;%\n  arrange(LifeExp2021)\n\nggplot(top_countries, aes(x = reorder(Countries, LifeExp2021), y = LifeExp2021, group=1 ))+\n  geom_line() + \n  geom_point() + \n  labs(title = \"Life Expentacy in 2021 for the top 10 Countries\",\n       x = \"Countries\",\n       y = \"Life Expectancy in 2021\") + \n  theme_minimal()+\n  coord_flip()"
+    "section": "3.5 Line Chart for Life Expectancy in 2021 for the top 10 Countries",
+    "text": "3.5 Line Chart for Life Expectancy in 2021 for the top 10 Countries"
   },
   {
     "objectID": "results.html#heatmap-for-showing-correlation",
     "href": "results.html#heatmap-for-showing-correlation",
     "title": "3  Results",
-    "section": "3.5 Heatmap for showing correlation",
-    "text": "3.5 Heatmap for showing correlation\n\n\nCode\nlibrary(corrplot)\n\nnumerical_cols &lt;- c('AnnPopGrow2000to2020', 'AnnPopGrow2020to2030', 'LifeExp2021', \n                     'TotFert', 'TotDepRatio', 'ShareUrbanPop', 'NetMigRate')\ndata_demo[numerical_cols] &lt;- lapply(data_demo[numerical_cols], as.numeric)\n\n\nWarning in lapply(data_demo[numerical_cols], as.numeric): NAs introduced by\ncoercion\n\n\nCode\ncorr_matrix &lt;- cor(data_demo[numerical_cols], use = 'complete.obs')\n\ncorrplot(corr_matrix, method='color', tl.col=\"black\", type = \"upper\", tl.srt = 45)"
+    "section": "3.6 Heatmap for showing correlation",
+    "text": "3.6 Heatmap for showing correlation"
   },
   {
     "objectID": "results.html#pie-chart-for-population-breakdown",
     "href": "results.html#pie-chart-for-population-breakdown",
     "title": "3  Results",
-    "section": "3.6 Pie Chart for Population Breakdown",
-    "text": "3.6 Pie Chart for Population Breakdown\n\n\nCode\nlibrary(ggplot2)\ndata_demo$PopUtot &lt;- as.numeric(data_demo$PopUtot)\ndata_demo$PopU18 &lt;- as.numeric(data_demo$PopU18)\ndata_demo$PopU5 &lt;- as.numeric(data_demo$PopU5)\ncountry_data &lt;- data_demo[117, ]\n\nlong_data &lt;- country_data %&gt;%\n  select\npie_data &lt;- data.frame(\n  Category = c(\"Population under 5\", \"Population under 18\", \"Others\"),\n  Values = c(country_data$PopU5, country_data$PopU18, country_data$PopUtot - country_data$PopU5 - country_data$PopU18))\n  \nggplot(pie_data, aes(x = \"\", y = Values, fill = Category)) + \n  geom_bar(width = 1, stat = 'identity') +\n  coord_polar(\"y\", start = 0) +\n  theme_void()+\n  labs(title = paste(\"Population Breakdown for \", country_data$Countries)) +\n  theme(legend.title = element_blank()) +\n  scale_fill_brewer(palette = \"Pastel1\")"
+    "section": "3.7 Pie Chart for Population Breakdown",
+    "text": "3.7 Pie Chart for Population Breakdown"
   },
   {
     "objectID": "results.html#stacked-bar-chart-for-top-3-countries",
     "href": "results.html#stacked-bar-chart-for-top-3-countries",
     "title": "3  Results",
-    "section": "3.7 Stacked Bar chart for top 3 countries",
-    "text": "3.7 Stacked Bar chart for top 3 countries\n\n\nCode\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\n# Assuming the data is already loaded into a variable named 'data_demo'\n\n# Convert the relevant columns to numeric\ndata_demo$PopUtot &lt;- as.numeric(data_demo$PopUtot)\ndata_demo$PopU18 &lt;- as.numeric(data_demo$PopU18)\ndata_demo$PopU5 &lt;- as.numeric(data_demo$PopU5)\n\n# Select countries based on specified row numbers\nselected_countries &lt;- data_demo[c(10, 90), ]\n\n# Reshape the data into a long format for plotting\nlong_data &lt;- selected_countries %&gt;%\n  select(Countries, PopUtot, PopU18, PopU5) %&gt;%\n  pivot_longer(cols = c(\"PopU18\", \"PopU5\"), names_to = \"Category\", values_to = \"Values\") %&gt;%\n  mutate(Category = case_when(\n    Category == \"PopU18\" ~ \"Population Under 18\",\n    Category == \"PopU5\" ~ \"Population Under 5\",\n    TRUE ~ \"Others\"\n  ))\n\n# Calculate the 'Others' category\nlong_data$Values[long_data$Category == \"Others\"] &lt;- with(selected_countries, PopUtot - PopU18 - PopU5)\n\n# Create the stacked bar chart\nggplot(long_data, aes(x = Countries, y = Values, fill = Category)) +\n  geom_bar(stat = 'identity') +\n  labs(title = \"Population Breakdown for Selected Countries\",\n       x = \"Country\", y = \"Population\") +\n  scale_fill_brewer(palette = \"Pastel1\") +\n  theme_minimal()"
+    "section": "3.8 Stacked Bar chart for top 3 countries",
+    "text": "3.8 Stacked Bar chart for top 3 countries"
+  },
+  {
+    "objectID": "d3graph.html#malnutrition-among-women---underweight-18-years-2016",
+    "href": "d3graph.html#malnutrition-among-women---underweight-18-years-2016",
+    "title": "4  Interactive graph",
+    "section": "4.1 Malnutrition among women - Underweight 18+ years (%) (2016)",
+    "text": "4.1 Malnutrition among women - Underweight 18+ years (%) (2016)"
   }
 ]
