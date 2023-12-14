@@ -1,53 +1,178 @@
 # Results
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE, fig.width = 30, fig.height = 10}
+# Load required packages
+if (!require("fmsb")) install.packages("fmsb")
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("ggplot2")) install.packages("ggplot2")
+if (!require("viridis")) install.packages("viridis")
+if (!require("reshape2")) install.packages("reshape2")
+if (!require("readxl")) install.packages("readxl")
+if (!require("corrplot")) install.packages("corrplot")
 
-```{r}
+# Load the Excel file
 library(readxl)
 library(dplyr)
-library(scales)
+library(tidyverse)
 
-# Load the Excel file
-file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
-
-# Get the names of all sheets
-sheet_names <- excel_sheets(file_path)
-
-# Function to preprocess a single sheet
-preprocess_sheet <- function(sheet_name) {
-  df <- read_excel(file_path, sheet = sheet_name)
-
-  # Handling missing values: Fill numeric missing values with median and categorical with mode
-  df <- df %>% mutate(across(where(is.numeric), ~ifelse(is.na(.), median(., na.rm = TRUE), .)))
-  df <- df %>% mutate(across(where(is.factor), ~ifelse(is.na(.), Mode(.), .)))
-
-  # Normalization: Apply Min-Max scaling to numeric columns
-  df <- df %>% mutate(across(where(is.numeric), ~rescale(., to = c(0, 1))))
-
-  return(df)
+# Load the data from the sheet
+data <- read_csv("./data/hiv.csv")
+data[data=='-'] <- NA
+#Replace the NA values with 0's
+for(column_name in names(data)) {
+  data[[column_name]][is.na(data[[column_name]])] <- 0
 }
 
-# Function to calculate mode
-Mode <- function(x) {
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
-
-# Apply preprocessing to all sheets and store in a list
-preprocessed_data <- lapply(sheet_names, preprocess_sheet)
-
-# The preprocessed data is now stored in 'preprocessed_data'
-print(preprocessed_data)
 ```
 
 
 
-1. Bar Chart (10 Most Populous Countries)
+## Bar Chart (Incidence Rates in Children (0-14))
 ```{r}
-# Load the Excel file
-file_path <- "./data/SOWC-2023-Statistical-tables-All-EN.xlsx"
-sheet_name <- "6. HIV AIDS Epidemiology"
+data$inciChildren0to14 <- as.numeric(data$inciChildren0to14)
+filtered_data <- data %>% 
+  filter(inciChildren0to14 > 1)
+ggplot(filtered_data, aes(x = Countries, y = inciChildren0to14)) +
+  geom_bar(stat = "identity", fill = 'cornflowerblue', color = 'black') +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  labs(title = "HIV Incidence Rates in Children (0-14)", x = "Country", y = "Incidence Rate")
+```
 
-# Reading the sheet
-data <- readxl::read_excel(file_path, sheet = sheet_name)
+## Histogram (Distribution of Mortality Rates in Adoloscents(10-19))
+```{r}
+data$mortAdolescents10to19 <- as.numeric(data$mortAdolescents10to19)
+
+sorted_data <- data %>% 
+  arrange(desc(mortAdolescents10to19))
+
+ggplot(data, aes(x = mortAdolescents10to19)) + 
+  geom_histogram(binwidth = 2, fill = "cornflowerblue", color = "black") + 
+  labs(title = "Distribution of HIV Mortality Rates in Adolescents(10-19)")
+```
+```{r}
+data_demo <- read_csv("./data/Demographics.csv")
+data_demo[data_demo == '-'] <- NA
+#Replace the NA values with 0's
+for(column_name in names(data_demo)) {
+  data[[column_name]][is.na(data_demo[[column_name]])] <- 0
+}
+```
+
+## Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)
+```{r}
+library(ggplot2)
+library(plotly)
+
+data_demo$LifeExp2021 <- as.numeric(data_demo$LifeExp2021)
+data_demo$AnnPopGrow2020to2030 <- as.numeric(data_demo$AnnPopGrow2020to2030)
+
+p <- ggplot(data_demo, aes(x = LifeExp2021, y = AnnPopGrow2020to2030)) + 
+  geom_point(aes(color = Countries))+
+  labs(title = "Life Expectancy vs Annual Population Growth (2020-2030)",
+       x = "Life Expectancy",
+       y = "Annual Population Growth(2020-2030)") +
+  theme_minimal()
+
+ggplotly(p, tooltip = "text")
 
 ```
+
+## Line Chart for Life Expectancy in 2021 for the top 10 Countries
+
+```{r}
+library(ggplot2)
+library(dplyr)
+data_demo$LifeExp2021 <- as.numeric(data_demo$LifeExp2021)
+
+top_countries <- data_demo %>%
+  top_n(10, LifeExp2021) %>%
+  arrange(LifeExp2021)
+
+ggplot(top_countries, aes(x = reorder(Countries, LifeExp2021), y = LifeExp2021, group=1 ))+
+  geom_line() + 
+  geom_point() + 
+  labs(title = "Life Expentacy in 2021 for the top 10 Countries",
+       x = "Countries",
+       y = "Life Expectancy in 2021") + 
+  theme_minimal()+
+  coord_flip()
+  
+```
+
+## Heatmap for showing correlation
+
+
+```{r}
+library(corrplot)
+
+numerical_cols <- c('AnnPopGrow2000to2020', 'AnnPopGrow2020to2030', 'LifeExp2021', 
+                     'TotFert', 'TotDepRatio', 'ShareUrbanPop', 'NetMigRate')
+data_demo[numerical_cols] <- lapply(data_demo[numerical_cols], as.numeric)
+
+corr_matrix <- cor(data_demo[numerical_cols], use = 'complete.obs')
+
+corrplot(corr_matrix, method='color', tl.col="black", type = "upper", tl.srt = 45)
+```
+
+## Pie Chart for Population Breakdown
+```{r}
+library(ggplot2)
+data_demo$PopUtot <- as.numeric(data_demo$PopUtot)
+data_demo$PopU18 <- as.numeric(data_demo$PopU18)
+data_demo$PopU5 <- as.numeric(data_demo$PopU5)
+country_data <- data_demo[117, ]
+
+long_data <- country_data %>%
+  select
+pie_data <- data.frame(
+  Category = c("Population under 5", "Population under 18", "Others"),
+  Values = c(country_data$PopU5, country_data$PopU18, country_data$PopUtot - country_data$PopU5 - country_data$PopU18))
+  
+ggplot(pie_data, aes(x = "", y = Values, fill = Category)) + 
+  geom_bar(width = 1, stat = 'identity') +
+  coord_polar("y", start = 0) +
+  theme_void()+
+  labs(title = paste("Population Breakdown for ", country_data$Countries)) +
+  theme(legend.title = element_blank()) +
+  scale_fill_brewer(palette = "Pastel1")
+```
+
+## Stacked Bar chart for top 3 countries
+```{r}
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Assuming the data is already loaded into a variable named 'data_demo'
+
+# Convert the relevant columns to numeric
+data_demo$PopUtot <- as.numeric(data_demo$PopUtot)
+data_demo$PopU18 <- as.numeric(data_demo$PopU18)
+data_demo$PopU5 <- as.numeric(data_demo$PopU5)
+
+# Select countries based on specified row numbers
+selected_countries <- data_demo[c(10, 90), ]
+
+# Reshape the data into a long format for plotting
+long_data <- selected_countries %>%
+  select(Countries, PopUtot, PopU18, PopU5) %>%
+  pivot_longer(cols = c("PopU18", "PopU5"), names_to = "Category", values_to = "Values") %>%
+  mutate(Category = case_when(
+    Category == "PopU18" ~ "Population Under 18",
+    Category == "PopU5" ~ "Population Under 5",
+    TRUE ~ "Others"
+  ))
+
+# Calculate the 'Others' category
+long_data$Values[long_data$Category == "Others"] <- with(selected_countries, PopUtot - PopU18 - PopU5)
+
+# Create the stacked bar chart
+ggplot(long_data, aes(x = Countries, y = Values, fill = Category)) +
+  geom_bar(stat = 'identity') +
+  labs(title = "Population Breakdown for Selected Countries",
+       x = "Country", y = "Population") +
+  scale_fill_brewer(palette = "Pastel1") +
+  theme_minimal()
+
+```
+
 
