@@ -24,6 +24,49 @@ for(column_name in names(data)) {
 
 ```
 
+## Analysis of Overweight Percentages in 2020
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+library(ggplot2)
+library(dplyr)
+library(readr)
+library(tidyverse)
+
+# Load the data
+nutrition_data <- read_csv("./data/Nutrition.csv")
+
+# Clean the column names to remove excess periods and line breaks
+colnames(nutrition_data) <- gsub("\\.\\n|\\.{2,}", "", colnames(nutrition_data))
+colnames(nutrition_data) <- gsub("\\s+", " ", colnames(nutrition_data))
+
+# Convert 'Overweight (%) (2020)' to numeric, remove NAs
+nutrition_data <- nutrition_data %>%
+  mutate(Overweight_2020 = as.numeric(`Overweight (%) (2020)`)) %>%
+  drop_na(Overweight_2020) %>%
+  arrange(desc(Overweight_2020))
+
+# Calculate the number of rows for the top 10%
+top_10_percent_rows <- round(nrow(nutrition_data) * 0.1)
+
+# Get the top 10% of the data
+top_10_percent <- nutrition_data %>%
+  slice_max(order_by = Overweight_2020, n = top_10_percent_rows)
+
+# Create the bar chart with different colors for each country
+ggplot(top_10_percent, aes(x = reorder(`Countries and areas`, Overweight_2020), y = Overweight_2020, fill = `Countries and areas`)) +
+  geom_bar(stat = "identity") +
+  scale_fill_viridis_d() +  # Use Viridis color scale for distinct colors
+  coord_flip() +  # Flip coordinates for a horizontal bar chart
+  labs(x = "Countries", y = "Overweight (%)", title = "Top 10% Overweight Percentage by Country in 2020") +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 45, hjust = 1), legend.position = "none")  # Adjust the text angle for country names and remove legend
+
+
+```
+
+The bar chart above illustrates the top 10% of countries with the highest percentages of overweight individuals in the year 2020. This visualization helps in identifying the countries that are facing the most significant challenges related to overweight populations. Notably, Libya tops the chart, followed by Lebanon and Australia, indicating a need for targeted public health interventions in these areas. The variation in color for each country enhances the chart's readability and allows for quick comparison across the countries listed. Such data is crucial for policymakers and health professionals who are working to combat obesity and promote healthier lifestyles.
+
 
 
 ## Bar Chart (Incidence Rates in Children (0-14))
@@ -174,5 +217,3 @@ ggplot(long_data, aes(x = Countries, y = Values, fill = Category)) +
   theme_minimal()
 
 ```
-
-

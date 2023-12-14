@@ -1,13 +1,54 @@
+---
+title: "Interactive graph"
+format: html
+---
+
 # Interactive graph
 
-<style>
-  * {
-    font-family: sans-serif;
-  }
-</style> 
+Underweight Prevalence Map
+This interactive map visualizes the percentage of the population over 18 years of age that is underweight in 2016 for each country.
 
-<div id="plot">
-</div>
-
+<div id="plot"></div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="scripts/myscript.js"></script>
+<script src="./scripts/myscript.js"></script>
+<style>
+* {
+  font-family: sans-serif;
+}
+
+.tooltip {
+  position: absolute;
+  text
+
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+
+# Code to convert data to json for interactive graphs
+if (!require("readr")) install.packages("readr")
+if (!require("jsonlite")) install.packages("jsonlite")
+if (!require("dplyr")) install.packages("dplyr")
+library(readr)
+library(jsonlite)
+library(dplyr)
+library(tidyverse)
+
+# Load the data
+nutrition_data <- read_csv("./data/Nutrition.csv")
+
+# Preprocess and select the required column
+nutrition_data_processed <- nutrition_data %>%
+  mutate(Underweight_18_plus = as.numeric(replace(`Underweight 18+ years (%) (2016)`, `Underweight 18+ years (%) (2016)` == '–', NA))) %>%
+  select(`Countries and areas`, Underweight_18_plus) %>%
+  drop_na(Underweight_18_plus) %>%
+  rename(country = `Countries and areas`, underweight_percentage = Underweight_18_plus)
+
+# Convert the data to JSON
+nutrition_json <- toJSON(nutrition_data_processed, pretty = TRUE)
+
+# Write the JSON to a file
+#write(nutrition_json, "./data/nutrition_data.json")
+
+```
+
+
+
