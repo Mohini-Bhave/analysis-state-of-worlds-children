@@ -3,10 +3,7 @@ title: "Interactive graph"
 format: html
 ---
 
-# Interactive graph
-
-Underweight Prevalence Map
-This interactive map visualizes the percentage of the population over 18 years of age that is underweight in 2016 for each country.
+## Malnutrition among women - Underweight 18+ years (%) (2016)
 
 <div id="plot"></div>
 <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
