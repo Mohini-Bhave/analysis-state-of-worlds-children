@@ -1,0 +1,750 @@
+[
+  {
+    "country": "Afghanistan",
+    "underweight_percentage": 16
+  },
+  {
+    "country": "Albania",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Algeria",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Andorra",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Angola",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Argentina",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Armenia",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Australia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Austria",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Azerbaijan",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Bahamas",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Bahrain",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Bangladesh",
+    "underweight_percentage": 23
+  },
+  {
+    "country": "Barbados",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Belarus",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Belgium",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Belize",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Benin",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Bhutan",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Bolivia (Plurinational State of)",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Botswana",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Brazil",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Brunei Darussalam",
+    "underweight_percentage": 6
+  },
+  {
+    "country": "Bulgaria",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Burkina Faso",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Burundi",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Cabo Verde",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Cambodia",
+    "underweight_percentage": 14
+  },
+  {
+    "country": "Cameroon",
+    "underweight_percentage": 6
+  },
+  {
+    "country": "Canada",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Central African Republic",
+    "underweight_percentage": 12
+  },
+  {
+    "country": "Chad",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Chile",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "China",
+    "underweight_percentage": 6
+  },
+  {
+    "country": "Colombia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Comoros",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Congo",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Costa Rica",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Côte d'Ivoire",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Croatia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Cuba",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Cyprus",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Czechia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Democratic People's Republic of Korea",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Denmark",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Djibouti",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Dominica",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Dominican Republic",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Ecuador",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Egypt",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "El Salvador",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Equatorial Guinea",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Eritrea",
+    "underweight_percentage": 17
+  },
+  {
+    "country": "Estonia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Eswatini",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Ethiopia",
+    "underweight_percentage": 15
+  },
+  {
+    "country": "Fiji",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Finland",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "France",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Gabon",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Gambia",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Georgia",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Germany",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Ghana",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Greece",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Grenada",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Guatemala",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Guinea",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Guinea-Bissau",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Guyana",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Haiti",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Honduras",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Hungary",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Iceland",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "India",
+    "underweight_percentage": 24
+  },
+  {
+    "country": "Indonesia",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Iran (Islamic Republic of)",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Iraq",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Ireland",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Israel",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Italy",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Jamaica",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Japan",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Jordan",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Kazakhstan",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Kenya",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Kiribati",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Kuwait",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Kyrgyzstan",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Lao People's Democratic Republic",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Latvia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Lebanon",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Lesotho",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Liberia",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Libya",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Lithuania",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Luxembourg",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Madagascar",
+    "underweight_percentage": 15
+  },
+  {
+    "country": "Malawi",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Malaysia",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Maldives",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Mali",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Malta",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Marshall Islands",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Mauritania",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Mauritius",
+    "underweight_percentage": 7
+  },
+  {
+    "country": "Mexico",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Micronesia (Federated States of)",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Mongolia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Montenegro",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Morocco",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Mozambique",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Myanmar",
+    "underweight_percentage": 14
+  },
+  {
+    "country": "Namibia",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Nepal",
+    "underweight_percentage": 17
+  },
+  {
+    "country": "Netherlands (kingdom of the)",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "New Zealand",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Nicaragua",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Niger",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Nigeria",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Niue",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "North Macedonia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Norway",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Oman",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Pakistan",
+    "underweight_percentage": 15
+  },
+  {
+    "country": "Palau",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Panama",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Papua New Guinea",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Paraguay",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Peru",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Philippines",
+    "underweight_percentage": 14
+  },
+  {
+    "country": "Poland",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Portugal",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Qatar",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Republic of Korea",
+    "underweight_percentage": 6
+  },
+  {
+    "country": "Republic of Moldova",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Romania",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Russian Federation",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Rwanda",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Saint Lucia",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Samoa",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Sao Tome and Principe",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Saudi Arabia",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Senegal",
+    "underweight_percentage": 11
+  },
+  {
+    "country": "Serbia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Seychelles",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Sierra Leone",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Singapore",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Slovakia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Slovenia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Solomon Islands",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Somalia",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "South Africa",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Spain",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Sri Lanka",
+    "underweight_percentage": 13
+  },
+  {
+    "country": "Suriname",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Sweden",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Switzerland",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Syrian Arab Republic",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Tajikistan",
+    "underweight_percentage": 5
+  },
+  {
+    "country": "Thailand",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Timor-Leste",
+    "underweight_percentage": 18
+  },
+  {
+    "country": "Togo",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Trinidad and Tobago",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Tunisia",
+    "underweight_percentage": 3
+  },
+  {
+    "country": "Türkiye",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Turkmenistan",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Tuvalu",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Uganda",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "Ukraine",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "United Arab Emirates",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "United Kingdom",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "United Republic of Tanzania",
+    "underweight_percentage": 10
+  },
+  {
+    "country": "United States",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Uruguay",
+    "underweight_percentage": 1
+  },
+  {
+    "country": "Uzbekistan",
+    "underweight_percentage": 4
+  },
+  {
+    "country": "Vanuatu",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Venezuela (Bolivarian Republic of)",
+    "underweight_percentage": 2
+  },
+  {
+    "country": "Viet Nam",
+    "underweight_percentage": 18
+  },
+  {
+    "country": "Yemen",
+    "underweight_percentage": 8
+  },
+  {
+    "country": "Zambia",
+    "underweight_percentage": 9
+  },
+  {
+    "country": "Zimbabwe",
+    "underweight_percentage": 5
+  }
+]
