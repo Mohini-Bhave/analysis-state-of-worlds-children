@@ -1,5 +1,5 @@
-// Path to the generated JSON data
-const dataUrl = './data/nutrition_data.json';
+// Path to the GitHub raw JSON data
+const dataUrl = 'https://raw.githubusercontent.com/Mohini-Bhave/analysis-state-of-worlds-children/main/data/nutrition_data.json';
 
 // Load the data
 d3.json(dataUrl).then(function(data) {
@@ -29,7 +29,8 @@ d3.json(dataUrl).then(function(data) {
       .sum(d => d.underweight_percentage));
 
   // Create the SVG container.
-  const svg = d3.select("#plot")
+  const svg = d3.select("#plot-container") // Select the #plot-container div
+      .append("svg")
       .attr("width", width)
       .attr("height", height)
       .attr("viewBox", [-margin, -margin, width, height])
