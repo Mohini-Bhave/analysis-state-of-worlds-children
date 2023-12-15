@@ -60,49 +60,49 @@
     "href": "results.html#bar-chart-incidence-rates-in-children-0-14",
     "title": "3  Results",
     "section": "3.2 Bar Chart (Incidence Rates in Children (0-14))",
-    "text": "3.2 Bar Chart (Incidence Rates in Children (0-14))"
+    "text": "3.2 Bar Chart (Incidence Rates in Children (0-14))\n\n\n\n\n\nThis chart is a bar graph that displays the HIV incidence rates in children aged 0-14 across various countries. Each bar represents a different country, and the height of the bar indicates the incidence rate. The countries listed are Cameroon, Congo, Equatorial Guinea, Eswatini, Gabon, Guinea-Bissau, Lesotho, Malawi, Namibia, Sierra Leone, South Africa, South Sudan, Zambia, and Zimbabwe. The X-axis represents countries and the Y-axis represents the incident rates in these countries. The graph is specifically plotted for countries with more than 1000 incidents to know exactly which countries we need to focus our attention on. The highest number of incidents of HIV are reported in Eswatini, Lesotho, and Zimbabwe."
   },
   {
     "objectID": "results.html#histogram-distribution-of-mortality-rates-in-adoloscents10-19",
     "href": "results.html#histogram-distribution-of-mortality-rates-in-adoloscents10-19",
     "title": "3  Results",
     "section": "3.3 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))",
-    "text": "3.3 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))"
+    "text": "3.3 Histogram (Distribution of Mortality Rates in Adoloscents(10-19))\n\n\n\n\n\nThis chart is a histogram that represents the distribution of the mortality rates of adolescents in the age range of (10-19) per 100,000 of the entire population. From the graph itself it is quite evident that the distribution is extremely positively skewed. This means that most of the adolescents have extremely low mortality rates but the extended right tail that there are quite a few outliers and there is evidence of the existence of a few adolescents with a high mortality rate. Although, these adolescents are quite rare."
   },
   {
     "objectID": "results.html#scatter-plot-for-life-expectancy-and-annual-population-growth-2020-2030",
     "href": "results.html#scatter-plot-for-life-expectancy-and-annual-population-growth-2020-2030",
     "title": "3  Results",
     "section": "3.4 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)",
-    "text": "3.4 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)"
+    "text": "3.4 Scatter Plot for Life Expectancy and Annual Population Growth (2020-2030)\n\n\n\n\n\n\nThis is a scatter plot between the Life Expectancy and the Annual Population Growth in the years (2020 - 2030). Using this graph we can easily track the growths of concerned countries and the life expectancy by simply toggling the countries on the graph. The Annual Population Growth (2020-2030) is highest for Niger with a &gt;60 years of life expectancy. We need to keep those countries under supervision that have their annual population growth rate lower than 0% since they could be prone to someone diseases that might leading to the negative Annual Population Growth Rate. Whereas, we also need to observe the countries with an extremely high life expectancy and a high annual population growth rate."
   },
   {
     "objectID": "results.html#line-chart-for-life-expectancy-in-2021-for-the-top-10-countries",
     "href": "results.html#line-chart-for-life-expectancy-in-2021-for-the-top-10-countries",
     "title": "3  Results",
-    "section": "3.5 Line Chart for Life Expectancy in 2021 for the top 10 Countries",
-    "text": "3.5 Line Chart for Life Expectancy in 2021 for the top 10 Countries"
+    "section": "3.6 Line Chart for Life Expectancy in 2021 for the top 10 Countries",
+    "text": "3.6 Line Chart for Life Expectancy in 2021 for the top 10 Countries\n\n\n\n\n\nThis graph is a horizontal line plot that shows the life expectancy in 2021 for the top 10 countries. The countries are listed on the y-axis, and they include, from top to bottom, Monaco, Japan, Australia, Switzerland, Republic of Korea, Malta, Sweden, Spain, Singapore, and Norway. The x-axis represents life expectancy in years and ranges from 83 to 86 years. The title “Life Expectancy in 2021 for the top 10 Countries” suggests that the data points represent the average number of years a person born in 2021 in each of these countries would be expected to live, assuming that current mortality rates at each age remain constant throughout their lifetime. Based on the Line Chart, the top 3 countries with the highest life expectancies are - Monaco, Japan, and Australia."
   },
   {
     "objectID": "results.html#heatmap-for-showing-correlation",
     "href": "results.html#heatmap-for-showing-correlation",
     "title": "3  Results",
-    "section": "3.6 Heatmap for showing correlation",
-    "text": "3.6 Heatmap for showing correlation"
+    "section": "3.5 Heatmap for showing correlation",
+    "text": "3.5 Heatmap for showing correlation\n\n\n\n\n\nThis is a Heatmap that helps us identify the correlation between the various variables we are concerned with for this study. Using this heatmap we can find out which variables are highly dependent on each other so while making policies we can choose the factors that we want to focus on in manner that it can positively affect the other factors. The color on the redder side shows that they are not correlated and changing one might not affect the other or might prove to be counterproductive when making governmental policies with respect to the demographics of a country."
   },
   {
     "objectID": "results.html#pie-chart-for-population-breakdown",
     "href": "results.html#pie-chart-for-population-breakdown",
     "title": "3  Results",
     "section": "3.7 Pie Chart for Population Breakdown",
-    "text": "3.7 Pie Chart for Population Breakdown"
+    "text": "3.7 Pie Chart for Population Breakdown\n\n\n\n\n\nThis is a Pie Chart for the Distribution of Population in Monaco (divisions made on whether an individual is under 5, over 5 but under 18, or over 18). Based on the pie chart we can tell that the majority of the people are over 18 followed by those over 5 but under 18. The % people in Monaco that are not over 18 is around 20%. Hence we can say that most adults in Monaco follow a relatively healthy lifestyle. From the pie chart we can also infer that there is a high percentage of todlers(0-5 years old) and hence the government can make policies to promote health benefits and raise awareness about health issues in children."
   },
   {
     "objectID": "results.html#stacked-bar-chart-for-top-3-countries",
     "href": "results.html#stacked-bar-chart-for-top-3-countries",
     "title": "3  Results",
     "section": "3.8 Stacked Bar chart for top 3 countries",
-    "text": "3.8 Stacked Bar chart for top 3 countries"
+    "text": "3.8 Stacked Bar chart for top 3 countries\n\n\n\n\n\nThis graph is a stacked bar chart that shows a population breakdown for two selected countries, Australia and Japan. The chart has two categories of population displayed in different colors:\n\nPopulation Under 5: Shown in blue.\nPopulation Under 18: Shown in red. The y-axis represents the population count (though the unit is not specified, it is likely to be in thousands or millions, depending on the data source), while the x-axis lists the two countries being compared.\n\nFor each country, the total height of the bar represents the total population under 18, with the segment in blue at the bottom indicating the subset of that population which is under 5 years old. The red segment, therefore, represents the portion of the population that is between 5 and 17 years old.\nFrom the chart, we can observe that Japan has a significantly larger population under 18 compared to Australia. Within both countries, the proportion of the population under 5 is less than the proportion that is between 5 and 17 years old."
   },
   {
     "objectID": "d3graph.html#malnutrition-among-women---underweight-18-years-2016",
