@@ -22,6 +22,25 @@ format: html
 </style>
 
 
+This interactive bubble chart visualizes the percentage of women aged 18 and older who are classified as underweight in various countries as of 2016. 
+
+- Each **bubble** represents a different **country**.
+- The **size of the bubble** corresponds to the **percentage** of underweight women, with larger bubbles indicating higher percentages.
+- The **color** of the bubbles may represent different regions or groups, providing a visual distinction between countries.
+
+The chart is interactive:
+
+- Hovering over a bubble will display the **country's name** and the **exact percentage** of women who are underweight.
+
+This visualization tool is essential for:
+
+- **Policymakers**, to understand the scope of malnutrition in women for informed decision-making.
+- **Healthcare professionals**, to identify regions where interventions might be most needed.
+- **Researchers**, to study global health and nutrition trends.
+
+By providing a clear and concise summary of complex data, the chart facilitates an accessible and engaging exploration of global health metrics.
+
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 
 # Code to convert data to json for interactive graphs
@@ -55,6 +74,7 @@ nutrition_json <- toJSON(nutrition_data_processed, pretty = TRUE)
 ```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 
 # Code to convert data to json for interactive graphs
+# Load necessary libraries
 if (!require("readr")) install.packages("readr")
 if (!require("jsonlite")) install.packages("jsonlite")
 if (!require("dplyr")) install.packages("dplyr")
@@ -66,6 +86,28 @@ library(tidyverse)
 # Load the data
 nutrition_data <- read_csv("./data/Nutrition.csv")
 
-print(colnames(nutrition_data))
+# Rename columns as per the new mapping
+nutrition_data_renamed <- nutrition_data %>%
+  rename(
+    Countries = `Countries and areas`,
+    `Weight at birth - Low Birthweight (2015)` = `Low birthweight\n (%)\n 2015`,
+    `Weight at birth -  Unweighed at birth  (2015–2021)` = `Unweighed at birth\n (%)\n 2015–2021`,
+    `Malnutrition among preschool-aged children (0–4 years of age)   Stunted (2020)` = `Stunted (%) \n (2020)`,
+    `Malnutrition among preschool-aged children (0–4 years of age)   Wasted (2015-2022) Severe` = `Wasted\n (%)\n (2015-2022) - severe`,
+    `Malnutrition among preschool-aged children (0–4 years of age)   Wasted (2015-2022) Moderate and Severe` = `Wasted\n (%)\n (2015-2022) - moderate and severe`,
+    `Malnutrition among preschool-aged children (0–4 years of age)   Overweight (2020)` = `Overweight (%) \n (2020)`,
+    `Vitamin A supplementation, (%) 2021` = `Vitamin A supplementation, \n full coveragea \n (6-59 months of age) (%) \n 2021`,
+    `Malnutrition among school-aged children (5–19 years of age) 2016 Thinness` = `Thinness (%)`,
+    `Malnutrition among school-aged children (5–19 years of age) 2016 Overweight` = `Overweight (%)`,
+    `Malnutrition among women Underweight 18+ years (%) (2016)` = `Underweight 18+ years (%) (2016)`,
+    `Malnutrition among women Anaemia 15–49 years (%) (2019)` = `Anaemia 15–49 years (%) (2019)`,
+    `Percentage of households consuming iodized salt (2015–2021)` = `Percentage of households consuming iodized salt\n 2015–2021`
+  )
+
+# Convert the data to JSON
+nutrition_json <- toJSON(nutrition_data_renamed, pretty = TRUE)
+
+# Write the JSON to a file
+#write(nutrition_json, "./data/nutrition_data_updated.json")
 
 ```
