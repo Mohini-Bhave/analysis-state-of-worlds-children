@@ -52,4 +52,20 @@ nutrition_json <- toJSON(nutrition_data_processed, pretty = TRUE)
 ```
 
 
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
 
+# Code to convert data to json for interactive graphs
+if (!require("readr")) install.packages("readr")
+if (!require("jsonlite")) install.packages("jsonlite")
+if (!require("dplyr")) install.packages("dplyr")
+library(readr)
+library(jsonlite)
+library(dplyr)
+library(tidyverse)
+
+# Load the data
+nutrition_data <- read_csv("./data/Nutrition.csv")
+
+print(colnames(nutrition_data))
+
+```

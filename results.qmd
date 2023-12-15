@@ -188,8 +188,6 @@ library(ggplot2)
 library(dplyr)
 library(tidyr)
 
-# Assuming the data is already loaded into a variable named 'data_demo'
-
 # Convert the relevant columns to numeric
 data_demo$PopUtot <- as.numeric(data_demo$PopUtot)
 data_demo$PopU18 <- as.numeric(data_demo$PopU18)
@@ -220,3 +218,85 @@ ggplot(long_data, aes(x = Countries, y = Values, fill = Category)) +
   theme_minimal()
 
 ```
+
+
+## Malnutrition Analysis Among Preschool-Aged Children
+
+```{r, echo = FALSE, message = FALSE, warning = FALSE, cache = FALSE}
+# Read the data from the CSV file
+data <- read.csv("./data/Nutrition.csv")
+library(scales)
+library(dplyr)
+library(plotly)
+# Clean and prepare the data
+data <- data %>%
+  select(Country = Countries.and.areas, 
+         Stunted = Stunted........2020., 
+         WastedSevere = Wasted........2015.2022....severe, 
+         WastedModerateSevere = Wasted........2015.2022....moderate.and.severe, 
+         Overweight = Overweight........2020.)
+
+# Create a color scale for the lines
+colors <- c('rgb(102,194,165)', 'rgb(252,141,98)', 'rgb(141,160,203)', 'rgb(231,138,195)')
+
+# Create parallel coordinates plot with enhanced aesthetics
+p <- plot_ly(data, type = 'parcoords',
+             line = list(color = ~Stunted, colorscale = colors),
+             dimensions = list(
+               list(range = c(min(data$Stunted, na.rm = TRUE), max(data$Stunted, na.rm = TRUE)),
+                    label = 'Stunted %', values = ~Stunted),
+               list(range = c(min(data$WastedSevere, na.rm = TRUE), max(data$WastedSevere, na.rm = TRUE)),
+                    label = 'Wasted Severe %', values = ~WastedSevere),
+               list(range = c(min(data$WastedModerateSevere, na.rm = TRUE), max(data$WastedModerateSevere, na.rm = TRUE)),
+                    label = 'Wasted Moderate & Severe %', values = ~WastedModerateSevere),
+               list(range = c(min(data$Overweight, na.rm = TRUE), max(data$Overweight, na.rm = TRUE)),
+                    label = 'Overweight %', values = ~Overweight)
+             )) %>%
+  layout(
+    font = list(size = 10, color = 'black'),  # This sets the general font size for the plot
+    paper_bgcolor = 'white',
+    plot_bgcolor = 'white',
+    parcoords = list(
+      line = list(
+        colorbar = list(
+          thickness = 10,
+          outlinewidth = 0,
+          borderwidth = 0
+        )
+      ),
+      dimensiondefaults = list(
+        label = list(font = list(size = 18, color = 'black')),  # Increase label font size here
+        tickfont = list(size = 12, color = 'black'),  # Increase tick label font size here
+        tickwidth = 3,  # Increase the tickwidth for thicker axis lines
+        range = list(color = 'black')
+      )
+    )
+  )
+
+
+# Show the plot
+p
+
+```
+
+
+This parallel coordinates plot illustrates the complex landscape of malnutrition among preschool-aged children (0–4 years of age) by comparing four key indicators:
+
+- Stunted Growth Percentage (2020)
+- Severe Wasting Percentage (2015-2022)
+- Moderate and Severe Wasting Percentage (2015-2022)
+- Overweight Percentage (2020)
+
+Each line in the plot represents a country's performance across these indicators, enabling a multi-dimensional comparison. The prevalence of stunting, severe wasting, combined moderate and severe wasting, and overweight conditions among children are visualized simultaneously, providing a snapshot of the nutritional challenges faced by different countries.
+
+The intertwined lines suggest a complex relationship between different forms of malnutrition. Typically, one would expect to see inverse relationships — as stunting increases, overweight percentages might decrease. However, the crossing lines indicate that malnutrition manifests in diverse ways, with some countries facing the double burden of malnutrition, where high rates of stunting and overweight coexist.
+
+This graph underscores the need for nuanced public health strategies that address the specific nutritional profiles of each country. Policies must be tailored not only to combat undernutrition, manifested by stunting and wasting, but also to prevent the rise of overweight and obesity in young children.
+
+**Interpretation of the Graph**
+
+- **Stunted Growth**: Indicates chronic undernutrition and can irreversibly affect a child's cognitive and physical development.
+- **Wasting**: Reflects acute undernutrition and is an immediate threat to a child's survival.
+- **Overweight**: Indicates an excess of nutritional intake compared to the body's needs and can lead to various health problems later in life, such as diabetes and heart disease.
+
+The visualization suggests that malnutrition is not merely the deficiency of nutrition but also includes the excesses. The juxtaposition of these conditions within the same age group emphasizes the complexity of nutritional problems and the importance of addressing all aspects of malnutrition to ensure the well-being of children globally.

@@ -105,10 +105,17 @@
     "text": "3.8 Stacked Bar chart for top 3 countries"
   },
   {
-    "objectID": "d3graph.html",
-    "href": "d3graph.html",
+    "objectID": "results.html#malnutrition-analysis-among-preschool-aged-children",
+    "href": "results.html#malnutrition-analysis-among-preschool-aged-children",
+    "title": "3  Results",
+    "section": "3.9 Malnutrition Analysis Among Preschool-Aged Children",
+    "text": "3.9 Malnutrition Analysis Among Preschool-Aged Children\n\n\n\n\n\n\nThis parallel coordinates plot illustrates the complex landscape of malnutrition among preschool-aged children (0–4 years of age) by comparing four key indicators:\n\nStunted Growth Percentage (2020)\nSevere Wasting Percentage (2015-2022)\nModerate and Severe Wasting Percentage (2015-2022)\nOverweight Percentage (2020)\n\nEach line in the plot represents a country’s performance across these indicators, enabling a multi-dimensional comparison. The prevalence of stunting, severe wasting, combined moderate and severe wasting, and overweight conditions among children are visualized simultaneously, providing a snapshot of the nutritional challenges faced by different countries.\nThe intertwined lines suggest a complex relationship between different forms of malnutrition. Typically, one would expect to see inverse relationships — as stunting increases, overweight percentages might decrease. However, the crossing lines indicate that malnutrition manifests in diverse ways, with some countries facing the double burden of malnutrition, where high rates of stunting and overweight coexist.\nThis graph underscores the need for nuanced public health strategies that address the specific nutritional profiles of each country. Policies must be tailored not only to combat undernutrition, manifested by stunting and wasting, but also to prevent the rise of overweight and obesity in young children.\nInterpretation of the Graph\n\nStunted Growth: Indicates chronic undernutrition and can irreversibly affect a child’s cognitive and physical development.\nWasting: Reflects acute undernutrition and is an immediate threat to a child’s survival.\nOverweight: Indicates an excess of nutritional intake compared to the body’s needs and can lead to various health problems later in life, such as diabetes and heart disease.\n\nThe visualization suggests that malnutrition is not merely the deficiency of nutrition but also includes the excesses. The juxtaposition of these conditions within the same age group emphasizes the complexity of nutritional problems and the importance of addressing all aspects of malnutrition to ensure the well-being of children globally."
+  },
+  {
+    "objectID": "d3graph.html#malnutrition-among-women---underweight-18-years-2016",
+    "href": "d3graph.html#malnutrition-among-women---underweight-18-years-2016",
     "title": "4  Interactive graph",
-    "section": "",
-    "text": "5 Malnutrition among women - Underweight 18+ years (%) (2016)"
+    "section": "4.1 Malnutrition among women - Underweight 18+ years (%) (2016)",
+    "text": "4.1 Malnutrition among women - Underweight 18+ years (%) (2016)\n\n\n\n\n\n\n\n\n [1] \"Countries and areas\"                                                             \n [2] \"Low birthweight\\n (%)\\n 2015\"                                                    \n [3] \"Unweighed at birth\\n (%)\\n 2015–2021\"                                            \n [4] \"Stunted (%) \\n (2020)\"                                                           \n [5] \"Wasted\\n (%)\\n (2015-2022) - severe\"                                             \n [6] \"Wasted\\n (%)\\n (2015-2022) - moderate and severe\"                                \n [7] \"Overweight (%) \\n (2020)\"                                                        \n [8] \"Vitamin A supplementation, \\n full coveragea \\n (6-59 months of age) (%) \\n 2021\"\n [9] \"Thinness (%)\"                                                                    \n[10] \"Overweight (%)\"                                                                  \n[11] \"Underweight 18+ years (%) (2016)\"                                                \n[12] \"Anaemia 15–49 years (%) (2019)\"                                                  \n[13] \"Percentage of households consuming iodized salt\\n 2015–2021\""
   }
 ]
